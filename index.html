@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <title>Certificate</title>
+  <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+  <section class="col-7 wrapper">
+    <div class="col- 3 logo">
+      <img src="img/logo.png" alt="logo" style="width: 40%;">
+    </div>
+    <h1>Your certificate is ready.<br></h1>
+    <p>Enter your name and course title.<br>You can do this only once, be careful!</p>
+    <div class="center">
+      <form class="box">
+
+        <input class="col-8" type="text" name="user_name" id="userName" placeholder="User name" required focus>
+        <br>
+
+        <input class="col-8" type="text" name="course_title" id="courseTitle" placeholder="Course title" required>
+        <br>
+
+        <input type="submit" id="button1" onclick="GetPdfCertificate(getName(), getTitle(), disableElement());">
+      </form>
+    </div>
+  </section>
+
+  <script type="text/javascript">
+    var userName = getName();
+    var courseTitle = getTitle();
+
+    function getName(userName) {
+      userName = document.getElementById("userName").value; // write userName on a certificate
+      return userName;
+    }
+
+    function getTitle() {
+      courseTitle = document.getElementById("courseTitle").value; // write courseTitel on a certificate
+      return courseTitle;
+    }
+
+    function disableElement() {
+      document.getElementById("button1").disabled = true; //disable Sumbit
+    }
+
+    document.writeln('<script type=\"text/javascript\" src=\"build/pdfmake.min.js\"><\x2fscript>');
+    document.writeln('<script type=\"text/javascript\" src=\"build/vfs_fonts.js\"><\x2fscript>');
+    document.writeln('<script type=\"text/javascript\" src=\"build/certificate.js\"><\x2fscript>');
+    document.writeln('<script type=\"text/javascript\" a href="#" onclick="GetPdfCertificate(userName)">Submit</a>');
+    document.writeln('<a align = \"center\" href=\"#\" onclick=\"GetPdfCertificate(userName, courseTitle)\">Download</a>');
+    document.close();
+  </script>
+
+</body>
+
+</html>
