@@ -4,27 +4,34 @@
 <head>
   <meta charset="utf-8">
   <title>Certificate</title>
-  <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Source+Serif+Pro:wght@300;400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/bootstrap.css">
   <link rel="stylesheet" href="css/style.css">
 </head>
 
 <body>
-  <section class="col-7 wrapper">
-    <div class="col- 3 logo">
-      <img src="img/logo.png" alt="logo" style="width: 40%;">
+  <section class="col-lg-6 col-md-8 col-sm-12 wrapper">
+    <div class="logo">
+      <img src="img/logo.png" alt="logo">
     </div>
-    <h1>Your certificate is ready.<br></h1>
-    <p>Enter your name and course title.<br>You can do this only once, be careful!</p>
-    <div class="center">
+    <div class="text-area">
+      <h1>Your certificate is ready.<br></h1>
+      <p>Please fill out the form below.<br>You can do this just once, be careful!</p>
+    </div>
+    <div class="col-lg-10 col-md-8 col-sm-10 center">
       <form class="box">
-
-        <input class="col-8" type="text" name="user_name" id="userName" placeholder="User name" required focus>
+        <div class="username-field input-group flex-nowrap">
+          <span class="input-group-text" id="addon-wrapping">User name</span>
+          <input class="form-control" type="text" name="user_name" id="userName" required focus>
+        </div>
+        <div class="input-group flex-nowrap">
+          <span class="input-group-text" id="addon-wrapping">Course title</span>
+          <input class="form-control" type="text" name="course_title" id="courseTitle" required>
+        </div>
         <br>
-
-        <input class="col-8" type="text" name="course_title" id="courseTitle" placeholder="Course title" required>
-        <br>
-
-        <input type="submit" id="button1" onclick="GetPdfCertificate(getName(), getTitle(), disableElement());">
+        <input class="btn btn-outline-light" type="submit" id="button1" onclick="GetPdfCertificate(getName(), getTitle(), disableElement());">
       </form>
     </div>
   </section>
