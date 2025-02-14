@@ -2,3 +2,4 @@ another conflict
 text message
 new line
 
+one more line
