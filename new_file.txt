@@ -1,1 +1,4 @@
 another conflict
+text message
+new line
+
